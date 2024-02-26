@@ -1,0 +1,20 @@
+{
+    "name": "monir/ams-router",
+    "description": "First & Simple Router for PHP",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Monir\\AmsRouter\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Monir Saikat",
+            "email": "118444503+MonirSaikat@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "symfony/var-dumper": "^6.4"
+    }
+}

@@ -2,7 +2,7 @@
 
 The start of another php framework. It in in very early stages of development. Working...
 
-How to run the application is so easy. You just download it and run `composer update` from the root of the project and you start creating route in the index.php as following.
+How to run the application is so easy. You just download it and run `composer update` from the root of the project and you start creating route in the index.php as following. And now run `php ams serve` you will see Server is running on http://localhost:8000
 ```php
 <?php
 

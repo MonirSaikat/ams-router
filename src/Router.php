@@ -2,6 +2,9 @@
 
 namespace Monir\AmsRouter;
 
+use Monir\AmsRouter\Http\Request;
+use Monir\AmsRouter\Http\Response;
+
 class Router
 {
   public $prefix = '';
@@ -18,8 +21,11 @@ class Router
   {
     foreach ($this->routes as $route) {
       if ($route->match($requestPath, $requestMethod)) {
-        $next = function ($params) use ($route) {
-          call_user_func_array($route->handler, $params);
+        $request  = new Request();
+        $response = new Response();
+
+        $next = function ($params) use ($route, $request, $response) {
+          call_user_func_array($route->handler, [$request, $response, $params]);
         };
 
         $middleware = array_reverse($route->middleware);
@@ -29,6 +35,7 @@ class Router
         }
 
         $next($route->params);
+
         return;
       }
     }

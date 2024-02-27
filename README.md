@@ -1,3 +1,9 @@
+### AMS Router
+
+The start of another php framework. It in in very early stages of development. Working...
+
+How to run the application is so easy. You just download it and run `composer update` from the root of the project and you start creating route in the index.php as following.
+```php
 <?php
 
 use Monir\AmsRouter\Http\Request;
@@ -23,3 +29,5 @@ $router->get('/about', function (Request $request, Response $response) {
 });
 
 RequestHandler::handleRequest($router);
+
+``` 
